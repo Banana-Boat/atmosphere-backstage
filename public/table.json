@@ -1,40 +1,65 @@
 {
-    "list": [{
-            "id": 1,
-            "name": "张三",
-            "money": 123,
-            "address": "广东省东莞市长安镇",
+    "list": [
+        {
+            "id": "0001",
+            "name": "Terry",
+            "money": "13589432@qq.com",
+            "address": "19928394443",
             "state": "成功",
-            "date": "2019-11-1",
-            "thumb": "https://lin-xin.gitee.io/images/post/wms.png"
+            "date": "2021-07-9",
+            "thumb": "https://lin-xin.gitee.io/images/post/parcel.png",
+            "authority": "超级管理员"
         },
         {
-            "id": 2,
-            "name": "李四",
-            "money": 456,
-            "address": "广东省广州市白云区",
+            "id": "0001",
+            "name": "蒋芸",
+            "money": "13589432@qq.com",
+            "address": "19928394443",
             "state": "成功",
-            "date": "2019-10-11",
-            "thumb": "https://lin-xin.gitee.io/images/post/node3.png"
+            "date": "2021-06-10",
+            "thumb": "https://lin-xin.gitee.io/images/post/notice.png",
+            "authority": "管理员"
         },
         {
-            "id": 3,
-            "name": "王五",
-            "money": 789,
-            "address": "湖南省长沙市",
-            "state": "失败",
-            "date": "2019-11-11",
-            "thumb": "https://lin-xin.gitee.io/images/post/parcel.png"
+            "id": "0003",
+            "name": "庆飞",
+            "money": "13589432@qq.com",
+            "address": "19928394443",
+            "state": "成功",
+            "date": "2021-60-19",
+            "thumb": "https://lin-xin.gitee.io/images/post/wms.png",
+            "authority": "管理员"
         },
         {
-            "id": 4,
-            "name": "赵六",
-            "money": 1011,
-            "address": "福建省厦门市鼓浪屿",
+            "id": "0004",
+            "name": "赵青凯",
+            "money": "13589432@qq.com",
+            "address": "19928394443",
             "state": "成功",
-            "date": "2019-10-20",
-            "thumb": "https://lin-xin.gitee.io/images/post/notice.png"
+            "date": "2021-06-20",
+            "thumb": "https://lin-xin.gitee.io/images/post/notice.png",
+            "authority": "管理员"
+        },
+        {
+            "id": "0005",
+            "name": "王倩",
+            "money": "13589432@qq.com",
+            "address": "19928394443",
+            "state": "成功",
+            "date": "2021-06-20",
+            "thumb": "https://lin-xin.gitee.io/images/post/parcel.png",
+            "authority": "超级管理员"
+        },
+        {
+            "id": "0006",
+            "name": "陈寅",
+            "money": "13589432@qq.com",
+            "address": "19928394443",
+            "state": "成功",
+            "date": "2021-06-20",
+            "thumb": "https://lin-xin.gitee.io/images/post/notice.png",
+            "authority": "管理员"
         }
     ],
-    "pageTotal": 4
+    "pageTotal": 8
 }

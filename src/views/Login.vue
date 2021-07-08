@@ -1,17 +1,17 @@
 <template>
     <div class="login-wrap">
         <div class="ms-login">
-            <div class="ms-title">后台管理系统</div>
+            <div class="ms-title">守护大气后台管理系统</div>
             <el-form :model="param" :rules="rules" ref="login" label-width="0px" class="ms-content">
                 <el-form-item prop="username">
-                    <el-input v-model="param.username" placeholder="username">
+                    <el-input v-model="param.username" placeholder="请输入用户名">
                         <template #prepend>
                             <el-button icon="el-icon-user"></el-button>
                         </template>
                     </el-input>
                 </el-form-item>
                 <el-form-item prop="password">
-                    <el-input type="password" placeholder="password" v-model="param.password"
+                    <el-input type="password" placeholder="请输入密码" v-model="param.password"
                         @keyup.enter="submitForm()">
                         <template #prepend>
                             <el-button icon="el-icon-lock"></el-button>
@@ -19,9 +19,8 @@
                     </el-input>
                 </el-form-item>
                 <div class="login-btn">
-                    <el-button type="primary" @click="submitForm()">登录</el-button>
+                    <el-button type="primary" @click="submitForm()" :loading="isLoading">登录</el-button>
                 </div>
-                <p class="login-tips">Tips : 用户名和密码随便填。</p>
             </el-form>
         </div>
     </div>
@@ -37,9 +36,11 @@ export default {
     setup() {
         const router = useRouter();
         const param = reactive({
-            username: "admin",
-            password: "123123",
+            username: "Terry",
+            password: "123456789",
         });
+        
+        const isLoading = ref(false)
 
         const rules = {
             username: [
@@ -53,24 +54,29 @@ export default {
                 { required: true, message: "请输入密码", trigger: "blur" },
             ],
         };
+
         const login = ref(null);
         const submitForm = () => {
-            login.value.validate((valid) => {
-                if (valid) {
-                    ElMessage.success("登录成功");
-                    localStorage.setItem("ms_username", param.username);
-                    router.push("/");
-                } else {
-                    ElMessage.error("登录成功");
-                    return false;
-                }
-            });
+            isLoading.value = true
+            setTimeout(() => {
+                login.value.validate((valid) => {
+                    if (valid) {
+                        ElMessage.success("登录成功");
+                        localStorage.setItem("ms_username", param.username);
+                        router.push("/");
+                    } else {
+                        ElMessage.error("登录成功");
+                        return false;
+                    }
+                });
+            }, 1000)
         };
 
         const store = useStore();
         store.commit("clearTags");
 
         return {
+            isLoading,
             param,
             rules,
             login,
@@ -82,32 +88,33 @@ export default {
 
 <style scoped>
 .login-wrap {
-    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: 100%;
-    background-image: url(../assets/img/login-bg.jpg);
-    background-size: 100%;
+    background-image: url(../assets/img/login_bg1.jpg);
+    background-position: bottom;
+
 }
 .ms-title {
+    font-family: sans-serif;
     width: 100%;
-    line-height: 50px;
+    line-height: 65px;
     text-align: center;
-    font-size: 20px;
-    color: #fff;
+    font-size: 22px;
+    color: #454545;
     border-bottom: 1px solid #ddd;
 }
 .ms-login {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: 350px;
-    margin: -190px 0 0 -175px;
+    
+    width: 450px;
     border-radius: 5px;
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.8);
     overflow: hidden;
 }
 .ms-content {
-    padding: 30px 30px;
+    padding: 40px 40px;
 }
 .login-btn {
     text-align: center;

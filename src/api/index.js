@@ -7,3 +7,11 @@ export const fetchData = query => {
         params: query
     });
 };
+
+export const fetchComplaintData = query => {
+    return request({
+        url: './complaint_table.json',
+        method: 'get',
+        params: query
+    });
+};

@@ -1,10 +1,5 @@
 <template>
     <div class="">
-        <div class="crumbs">
-            <el-breadcrumb separator="/">
-                <el-breadcrumb-item><i class="el-icon-lx-copy"></i> tab选项卡</el-breadcrumb-item>
-            </el-breadcrumb>
-        </div>
         <div class="container">
             <el-tabs v-model="message">
                 <el-tab-pane :label="`未读消息(${state.unread.length})`" name="first">
@@ -79,23 +74,23 @@ export default {
         const state = reactive({
             unread: [
                 {
-                    date: "2018-04-19 20:00:00",
+                    date: "2021-07-07 20:00:00",
                     title: "【系统通知】该系统将于今晚凌晨2点到5点进行升级维护",
                 },
                 {
-                    date: "2018-04-19 21:00:00",
-                    title: "今晚12点整发大红包，先到先得",
+                    date: "2021-07-07 21:00:00",
+                    title: "新风杯线上环保知识竞赛即将开赛！",
                 },
             ],
             read: [
                 {
-                    date: "2018-04-19 20:00:00",
+                    date: "2021-07-07 20:00:00",
                     title: "【系统通知】该系统将于今晚凌晨2点到5点进行升级维护",
                 },
             ],
             recycle: [
                 {
-                    date: "2018-04-19 20:00:00",
+                    date: "2021-07-07 20:00:00",
                     title: "【系统通知】该系统将于今晚凌晨2点到5点进行升级维护",
                 },
             ],

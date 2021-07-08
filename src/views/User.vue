@@ -15,8 +15,9 @@
                                 <i class="el-icon-lx-camerafill"></i>
                             </span>
                         </div>
-                        <div class="info-name">{{ name }}</div>
-                        <div class="info-desc">不可能！我的代码怎么可能会有bug！</div>
+                        <div class="info-name">{{ name }} <span style="font-size:1.1rem;color: #999;">- 超级管理员</span></div>
+                        <div class="info-desc">联系电话：18824483933</div>
+                        <div class="info-desc">邮箱：399304005@qq.com</div>
                     </div>
                 </el-card>
             </el-col>
@@ -35,8 +36,11 @@
                         <el-form-item label="新密码：">
                             <el-input type="password" v-model="form.new"></el-input>
                         </el-form-item>
-                        <el-form-item label="个人简介：">
-                            <el-input v-model="form.desc"></el-input>
+                        <el-form-item label="联系电话：">
+                            <el-input ></el-input>
+                        </el-form-item>
+                        <el-form-item label="邮箱：">
+                            <el-input ></el-input>
                         </el-form-item>
                         <el-form-item>
                             <el-button type="primary" @click="onSubmit">保存</el-button>
@@ -65,7 +69,7 @@
 import { reactive, ref } from "vue";
 import VueCropper from "vue-cropperjs";
 import "cropperjs/dist/cropper.css";
-import avatar from "../assets/img/img.jpg";
+import avatar from "../assets/img/user.jpg";
 export default {
     name: "user",
     components: {
@@ -137,6 +141,10 @@ export default {
     text-align: center;
     padding: 35px 0;
 }
+.info-desc{
+    margin-top: 5px;
+    font-size: 1.1rem;
+}
 .info-image {
     position: relative;
     margin: auto;
@@ -172,7 +180,7 @@ export default {
     opacity: 1;
 }
 .info-name {
-    margin: 15px 0 10px;
+    margin: 15px 0 20px;
     font-size: 24px;
     font-weight: 500;
     color: #262626;
